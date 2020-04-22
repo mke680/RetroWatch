@@ -10,4 +10,4 @@ Features:
 - Active Time per day (WIP)
 - Compass Feature *No Magnetometer. Uses point to point GPS coordinates to work out general bearings* (WIP)
 
-![Alt text](/RetroWatch/tree/master/resources/background.png?raw=true "Optional Title")
+![Alt text](/resources/background.png?raw=true "Optional Title")
