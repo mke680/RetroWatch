@@ -1,0 +1,71 @@
+<svg id="page" class="portrait-view">
+
+  <image id="background" href="background.png" x="0" y="0" width="100%" height="100%" fill="#000000" class="background" />
+   
+  <image id="day" href="day_mon.png" x="265" y="109" width="23" height="10" fill="#FFFFFF" class="foreground" />
+  
+  <image href="8.png" x="165" y="109" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+  <image href="8.png" x="185" y="109" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+  <image id="date1" href="1.png" x="165" y="109" width="14" height="22" fill="#FFFFFF" class="foreground" />
+  <image id="date2" href="1.png" x="185" y="109" width="14" height="22" fill="#FFFFFF" class="foreground" />
+  
+  <image href="dateseparator.png" x="205" y="109" width="14" height="22" fill="#FFFFFF" class="foreground" />
+  
+  <image href="8.png" x="225" y="109" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+  <image href="8.png" x="245" y="109" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+  <image id="month1" href="1.png" x="225" y="109" width="14" height="22" fill="#FFFFFF" class="foreground" />
+  <image id="month2" href="1.png" x="245" y="109" width="14" height="22" fill="#FFFFFF" class="foreground" />
+  
+  <image href="8.png" x="165" y="137" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="185" y="137" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="205" y="137" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="225" y="137" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="245" y="137" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  
+  <image id="mySteps1" href="1.png" x="165" y="137" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="mySteps2" href="2.png" x="185" y="137" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="mySteps3" href="3.png" x="205" y="137" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="mySteps4" href="4.png" x="225" y="137" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="mySteps5" href="5.png" x="245" y="137" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  
+  <image href="steps.png" x="265" y="137" width="38" height="10" fill="#FFFFFF" class="foreground" />
+  
+  <image href="8.png" x="165" y="165" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="185" y="165" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="205" y="165" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="225" y="165" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="245" y="165" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  
+  <image id="myDistance1" href="1.png" x="165" y="165" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myDistance2" href="2.png" x="185" y="165" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myDistance3" href="3.png" x="205" y="165" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myDistance4" href="4.png" x="225" y="165" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myDistance5" href="5.png" x="245" y="165" width="14" height="22" fill="#FFFFFF" class="foreground"/>  
+  
+  <image id="metric" href="distance_meters.png" x="265" y="165" width="30" height="10" fill="#FFFFFF" class="foreground" />
+  
+  <svg> 
+    <image href="ampm_a.png" x="123" y="70" width="8" height="12" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="separator.png" x="200" y="71" width="5" height="20" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="146" y="65" width="21" height="33" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="171" y="65" width="21" height="33" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="213" y="65" width="21" height="33" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="238" y="65" width="21" height="33" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="269" y="76" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+    <image href="8.png" x="289" y="76" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground" />
+    
+    <image id="ampm" href="ampm_a.png" x="123" y="70" width="8" height="12" fill="#FFFFFF" class="foreground" />
+    <image id="separator" href="separator.png" x="200" y="71" width="5" height="20" fill="#FFFFFF" class="foreground" />
+    <image id="hours1" href="1.png" x="146" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
+    <image id="hours2" href="3.png" x="171" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
+    <image id="mins1" href="3.png" x="213" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
+    <image id="mins2" href="7.png" x="238" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
+    <image id="secs1" href="7.png" x="269" y="76" width="14" height="22" fill="#FFFFFF" class="foreground" />
+    <image id="secs2" href="9.png" x="289" y="76" width="14" height="22" fill="#FFFFFF" class="foreground" />
+    
+  </svg>
+  
+</svg>
+
+<!-- 348x250 -->
+

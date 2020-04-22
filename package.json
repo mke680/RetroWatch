@@ -1,0 +1,26 @@
+{
+  "fitbit": {
+    "appUUID": "c5c9919a-25f5-41e3-b875-1f3bf1ee8ce3",
+    "appType": "clockface",
+    "appDisplayName": "RetroClock",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate",
+      "access_location"
+    ],
+    "buildTargets": [
+      "higgs"
+    ],
+    "i18n": {
+      "en": {
+        "name": "RetroClock"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0"
+  }
+}
