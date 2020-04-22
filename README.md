@@ -9,3 +9,5 @@ Features:
 - Steps (supports yards and meters) *Easiest to achieve a rough 5 digit count per day, if you do more than 99,999 steps... sit down*
 - Active Time per day (WIP)
 - Compass Feature *No Magnetometer. Uses point to point GPS coordinates to work out general bearings* (WIP)
+
+![Alt text](/resources/background.jpg?raw=true "Optional Title")
