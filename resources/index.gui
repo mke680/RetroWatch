@@ -44,6 +44,20 @@
   
   <image id="metric" href="distance_meters.png" x="265" y="165" width="30" height="10" fill="#FFFFFF" class="foreground" />
   
+  <image href="8.png" x="165" y="193" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="185" y="193" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="205" y="193" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="225" y="193" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  <image href="8.png" x="245" y="193" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+  
+  <image id="myCalories1" href="1.png" x="165" y="193" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myCalories2" href="1.png" x="185" y="193" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myCalories3" href="1.png" x="205" y="193" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myCalories4" href="1.png" x="225" y="193" width="14" height="22" fill="#FFFFFF" class="foreground"/>
+  <image id="myCalories5" href="1.png" x="245" y="193" width="14" height="22" fill="#FFFFFF" class="foreground"/>  
+  
+  <image id="metric" href="calories.png" x="265" y="193" width="30" height="10" fill="#FFFFFF" class="foreground" />
+  
   <svg> 
     <image href="ampm_a.png" x="123" y="70" width="8" height="12" fill="#FFFFFF" opacity=".1" class="foreground" />
     <image href="separator.png" x="200" y="71" width="5" height="20" fill="#FFFFFF" opacity=".1" class="foreground" />
@@ -61,10 +75,128 @@
     <image id="mins1" href="3.png" x="213" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
     <image id="mins2" href="7.png" x="238" y="65" width="21" height="33" fill="#FFFFFF" class="foreground" />
     <image id="secs1" href="7.png" x="269" y="76" width="14" height="22" fill="#FFFFFF" class="foreground" />
-    <image id="secs2" href="9.png" x="289" y="76" width="14" height="22" fill="#FFFFFF" class="foreground" />
-    
+    <image id="secs2" href="9.png" x="289" y="76" width="14" height="22" fill="#FFFFFF" class="foreground" /> 
   </svg>
   
+  <!-- COMPASS -->
+  <svg viewport-fill="#111111">
+    <g id="compass" pointer-events="visible" transform="rotate(180)" transform="translate(95,162)" >
+      <rect x="$-2" y="-44" width="4" height="44" fill="#ef0002"  />
+      <rect x="$-4" y="0" width="4" height="44" fill="#005294"  />
+      <rect x="0" y="$-46" width="44" height="4" fill="#383f3a"  />
+      <rect x="-44" y="$-4" width="44" height="4" fill="#383f3a"  />
+     <arc x="$-44" y="-44" width="88" height="88" fill="#ef0002"
+    arc-width="3" start-angle="270" sweep-angle="180" />
+      <arc x="$-88" y="-44" width="88" height="88" fill="#005294"
+    arc-width="3" start-angle="90" sweep-angle="180" />
+       <arc x="$-77" y="-33" width="66" height="66" fill="#383f3a"
+    arc-width="2" start-angle="270" sweep-angle="180" />
+      <arc x="$-66" y="-33" width="66" height="66" fill="#383f3a"
+    arc-width="2" start-angle="90" sweep-angle="180" />
+    </g>
+    <circle cx="95" cy="162" r="31" fill="#e2dcdb" />
+    <image href="8.png" x="70" y="149" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+    <image href="8.png" x="88" y="149" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+    <image href="8.png" x="106" y="149" width="14" height="22" fill="#FFFFFF" opacity=".1" class="foreground"/>
+    <image id="compass1" href="8.png" x="70" y="149" width="14" height="22" fill="#FFFFFF" class="foreground" /> 
+    <image id="compass2" href="8.png" x="88" y="149" width="14" height="22" fill="#FFFFFF" class="foreground" /> 
+    <image id="compass3" href="8.png" x="106" y="149" width="14" height="22" fill="#FFFFFF" class="foreground" /> 
+  </svg>
+  
+  <!-- BPM -->
+  <svg id="bpmparent">
+    <image id="bpm50" href="blue_bpm_start.png" x="60" y="98" width ="11" height="5" class="foreground" />
+    <image id="bpm51" href="blue_bpm_start.png" x="62" y="92" width ="11" height="5" class="foreground" />
+    <image id="bpm52" href="blue_bpm_start.png" x="64" y="86" width ="11" height="5" class="foreground" />
+    <image id="bpm53" href="blue_bpm_start.png" x="66" y="80" width ="11" height="5" class="foreground" />
+    <image id="bpm54" href="blue_bpm.png" x="68" y="77" width ="10" height="2" class="foreground" />
+    <image id="bpm55" href="blue_bpm.png" x="69" y="74" width ="10" height="2" class="foreground" />
+    <image id="bpm56" href="blue_bpm.png" x="70" y="71" width ="10" height="2" class="foreground" />
+    <image id="bpm57" href="blue_bpm.png" x="71" y="68" width ="10" height="2" class="foreground" />
+    <image id="bpm58" href="blue_bpm.png" x="72" y="65" width ="10" height="2" class="foreground" />
+    <image id="bpm59" href="blue_bpm.png" x="73" y="62" width ="10" height="2" class="foreground" />
+    <image id="bpm60" href="green_bpm_start.png" x="74" y="59" width ="10" height="2" class="foreground" />
+    <image id="bpm61" href="green_part1_bpm.png" x="76" y="52" width ="8" height="6" class="foreground" />    
+    <image id="bpm62" href="green_part2_bpm.png" x="80" y="47" width ="6" height="8" class="foreground" />    
+    <image id="bpm63" href="green_bpm.png" x="87" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm64" href="green_bpm.png" x="90" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm65" href="green_bpm.png" x="93" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm66" href="green_bpm.png" x="96" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm67" href="green_bpm.png" x="99" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm68" href="green_bpm.png" x="102" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm69" href="green_bpm.png" x="105" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm70" href="green_bpm.png" x="108" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm71" href="green_bpm.png" x="111" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm72" href="green_bpm.png" x="114" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm73" href="green_bpm.png" x="117" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm74" href="green_bpm.png" x="120" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm75" href="green_bpm.png" x="123" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm76" href="green_bpm.png" x="126" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm77" href="green_bpm.png" x="129" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm78" href="green_bpm.png" x="132" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm79" href="green_bpm.png" x="135" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm80" href="yellow_bpm.png" x="138" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm81" href="yellow_bpm.png" x="141" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm82" href="yellow_bpm.png" x="144" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm83" href="yellow_bpm.png" x="147" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm84" href="yellow_bpm.png" x="150" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm85" href="yellow_bpm.png" x="153" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm86" href="yellow_bpm.png" x="156" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm87" href="yellow_bpm.png" x="159" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm88" href="yellow_bpm.png" x="162" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm89" href="yellow_bpm.png" x="165" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm90" href="yellow_bpm.png" x="168" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm91" href="yellow_bpm.png" x="171" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm92" href="yellow_bpm.png" x="174" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm93" href="yellow_bpm.png" x="177" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm94" href="yellow_bpm.png" x="180" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm95" href="yellow_bpm.png" x="183" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm96" href="yellow_bpm.png" x="186" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm97" href="yellow_bpm.png" x="189" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm98" href="yellow_bpm.png" x="192" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm99" href="yellow_bpm.png" x="195" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm100" href="orange_bpm.png" x="198" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm101" href="orange_bpm.png" x="201" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm102" href="orange_bpm.png" x="204" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm103" href="orange_bpm.png" x="207" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm104" href="orange_bpm.png" x="210" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm105" href="orange_bpm.png" x="213" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm106" href="orange_bpm.png" x="216" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm107" href="orange_bpm.png" x="219" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm108" href="orange_bpm.png" x="222" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm109" href="orange_bpm.png" x="225" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm110" href="orange_bpm.png" x="228" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm111" href="orange_bpm.png" x="231" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm112" href="orange_bpm.png" x="234" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm113" href="orange_bpm.png" x="237" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm114" href="orange_bpm.png" x="240" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm115" href="orange_bpm.png" x="243" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm116" href="orange_bpm.png" x="246" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm117" href="orange_bpm.png" x="249" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm118" href="orange_bpm.png" x="252" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm119" href="orange_bpm.png" x="255" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm120" href="red_bpm.png" x="258" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm121" href="red_bpm.png" x="261" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm122" href="red_bpm.png" x="264" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm123" href="red_bpm.png" x="267" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm124" href="red_bpm.png" x="270" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm125" href="red_bpm.png" x="273" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm126" href="red_bpm.png" x="276" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm127" href="red_bpm.png" x="279" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm128" href="red_bpm.png" x="282" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm129" href="red_bpm.png" x="285" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm130" href="red_bpm.png" x="288" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm131" href="red_bpm.png" x="291" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm132" href="red_bpm.png" x="294" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm133" href="red_bpm.png" x="297" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm134" href="red_bpm.png" x="300" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm135" href="red_bpm.png" x="303" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm136" href="red_bpm.png" x="306" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm137" href="red_bpm.png" x="309" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm138" href="red_bpm.png" x="312" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm139" href="red_bpm.png" x="315" y="46" width ="2" height="9" class="foreground" />
+    <image id="bpm140" href="red_bpm_final.png" x="318" y="46" width ="1" height="9" class="foreground" />
+  </svg>
 </svg>
 
 <!-- 348x250 -->

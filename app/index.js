@@ -3,10 +3,15 @@ import clock from "clock";
 import document from "document";
 import * as fs from "fs";
 import * as messaging from "messaging";
-import { preferences } from "user-settings";
+import { preferences,units } from "user-settings";
 import * as util from "../common/utils";
-import { today, goals } from "user-activity";
-import { units } from "user-settings";
+//import * as gpscompass from "../common/gpscompass";
+import { today } from "user-activity";
+import { HeartRateSensor } from "heart-rate";
+import { display } from "display";
+import { location } from "geolocation";
+import { BodyPresenceSensor } from "body-presence";
+import { geolocation } from "geolocation";
 
 const SETTINGS_TYPE = "cbor";
 const SETTINGS_FILE = "settings.cbor";
@@ -20,11 +25,11 @@ let mySteps2 = document.getElementById("mySteps2");
 let mySteps3 = document.getElementById("mySteps3");
 let mySteps4 = document.getElementById("mySteps4");
 let mySteps5 = document.getElementById("mySteps5");
-let myMinutes1 = document.getElementById("myMinutes1");
-let myMinutes2 = document.getElementById("myMinutes2");
-let myMinutes3 = document.getElementById("myMinutes3");
-let myMinutes4 = document.getElementById("myMinutes4");
-let myMinutes5 = document.getElementById("myMinutes5");
+let myCalories1 = document.getElementById("myCalories1");
+let myCalories2 = document.getElementById("myCalories2");
+let myCalories3 = document.getElementById("myCalories3");
+let myCalories4 = document.getElementById("myCalories4");
+let myCalories5 = document.getElementById("myCalories5");
 let myDistance1 = document.getElementById("myDistance1");
 let myDistance2 = document.getElementById("myDistance2");
 let myDistance3 = document.getElementById("myDistance3");
@@ -51,16 +56,52 @@ let date2 = document.getElementById("date2");
 let month1 = document.getElementById("month1");
 let month2 = document.getElementById("month2");
 
+// COMPASS
+let coords = [];
+let compass = document.getElementById("compass");
+let compass1 = document.getElementById("compass1");
+let compass2 = document.getElementById("compass2");
+let compass3 = document.getElementById("compass3");
+
+// HEART RATE MONITOR
+if (HeartRateSensor) {
+  const hrm = new HeartRateSensor({ frequency: 1 });
+  const body = new BodyPresenceSensor();
+  hrm.addEventListener("reading", () => {
+      setHeartRate(hrm.heartRate);
+  });
+    display.addEventListener("change", () => {
+    // Automatically stop the sensor when the screen is off to conserve battery
+    display.on ? ( hrm.start() ) : ( setHeartRate(50), hrm.stop(), document.getElementById("bpm50").style.display = "none" );
+  });
+  body.addEventListener("reading", () => {
+    body.present ? ( hrm.start() ) : setHeartRate(50), hrm.stop(), document.getElementById("bpm50").style.display = "none";
+    //body.present ? console.log("On") : console.log("Off");
+  });
+  body.start();
+  hrm.start();
+}
+
 clock.granularity = "seconds";
 
 clock.ontick = evt => {
   let d = evt.date;
 
+  // COMPASS
+  if(d.getSeconds() % 10 === 1){
+    //console.log('test');
+    setCompass(coords);
+    //coords.push({latitude:5,longitude:6});
+    //console.log(JSON.stringify(coords));
+ 
+  }
+
+  
   // SENSORS 
-  //getActiveMinutes();
   getDistance();
   getSteps();
-  
+  getCalories();
+
   // DATE
   setDate(d.getDate());
   
@@ -111,14 +152,26 @@ function applyTheme(background, foreground) {
   settings.foreground = foreground;
 }
 
+function getCalories() {
+  if (me.permissions.granted("access_activity")) {
+    let calories = today.adjusted.calories || 0;
+    calories = util.zero5Pad(calories);
+  }else{
+    let calories = "00000";
+  }
+  drawDigit(calories.toString().substring(0,1), myCalories1);
+  drawDigit(calories.toString().substring(1,2), myCalories2);
+  drawDigit(calories.toString().substring(2,3), myCalories3);
+  drawDigit(calories.toString().substring(3,4), myCalories4);
+  drawDigit(calories.toString().substring(4,5), myCalories5);
+}
+
 function getSteps() {
   if (me.permissions.granted("access_activity")) {
     let steps = today.adjusted.steps || 0;
     steps = util.zero5Pad(steps);
-    //console.log(`${steps} Steps`);
   }else{
     let steps = "00000";
-    //console.log(`${steps} Steps`);
   }
   drawDigit(steps.toString().substring(0,1), mySteps1);
   drawDigit(steps.toString().substring(1,2), mySteps2);
@@ -152,6 +205,57 @@ function setSeparator(val) {
   separator.style.display = (val % 2 === 0 ? "inline" : "none");
 }
 
+// Converts from degrees to radians.
+function toRadians(degrees) {
+  return degrees * Math.PI / 180;
+};
+ 
+// Converts from radians to degrees.
+function toDegrees(radians) {
+  return radians * 180 / Math.PI;
+}
+
+
+function bearing(startLat, startLng, destLat, destLng){
+  startLat = toRadians(startLat);
+  startLng = toRadians(startLng);
+  destLat = toRadians(destLat);
+  destLng = toRadians(destLng);
+  let y = Math.sin(destLng - startLng) * Math.cos(destLat);
+  let x = Math.cos(startLat) * Math.sin(destLat) - Math.sin(startLat) * Math.cos(destLat) * Math.cos(destLng - startLng);
+  let brng = Math.atan2(y, x);
+  brng = toDegrees(brng);
+  return (brng + 360) % 360;
+}
+
+async function setCompass(coords) {
+
+  let position1 = new Promise((resolve, reject) => {
+    setTimeout(() => geolocation.getCurrentPosition(resolve, reject), 1000)
+  });
+  let position2 = new Promise((resolve, reject) => {
+    setTimeout(() => geolocation.getCurrentPosition(resolve, reject), 6000)
+  });
+
+  let result1 = await position1; // wait until the promise resolves (*)
+  //let result2 = await position2; // wait until the promise resolves (*)
+  //console.log(result1.coords.longitude); // "done!"
+  //let brng = bearing(result1.coords.latitude,result1.coords.longitude,result2.coords.latitude,result2.coords.longitude); // "done!"
+  
+  let latitude = result1.coords.latitude;
+  let longitude = result1.coords.longitude;
+  coords.push({latitude:latitude,longitude:longitude});
+
+  //compass.groupTransform.rotate.angle = brng;
+    //brng = util.zero5Pad(brng);
+  //drawDigit(brng.toString().substring(2,3), compass1);
+  //drawDigit(brng.toString().substring(3,4), compass2);
+  //drawDigit(brng.toString().substring(4,5), compass3);
+
+  //resolve coords;
+}
+
+
 function setHours(val) {
   if (val > 9) {
     drawDigit(Math.floor(val / 10), hours1);
@@ -183,6 +287,16 @@ function setDate(val) {
 function setMonth(val) {
   drawDigit(Math.floor(val / 10), month1);
   drawDigit(Math.floor(val % 10), month2);
+}
+
+function setHeartRate(val){
+  let bpmid = 140;
+  val < 50 ? ( document.getElementById("bpmparent").style.display = "none" , val = 50 ):
+  document.getElementById("bpmparent").style.display = "inline";
+  while(bpmid >= 50 && val >= 50){
+    //console.log("calculating HR" + val);
+    bpmid > val ? ( document.getElementById("bpm" + bpmid).style.display = "none", bpmid-- ) : (document.getElementById("bpm" + bpmid).style.display = "inline" , bpmid-- );
+  }
 }
 
 function setDay(val) {
