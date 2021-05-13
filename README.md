@@ -13,4 +13,6 @@ WIP:
 - Compass Feature *No Magnetometer. Uses point to point GPS coordinates to work out general bearings* (WIP)
   - Works Intermittently on watch. Possibly something to do with how often the GPS actually refreshes.
 
-![Alt text](/RetroClock-screenshot.png?raw=true "Optional Title")
+![Alt text](/RetroClock-screenshot.png?raw=true "Render")
+
+![Alt text](/RetroClock_RL_WatchFace.png?raw=true "Actual Watch Face")
